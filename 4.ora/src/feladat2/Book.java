@@ -5,6 +5,7 @@ public class Book {
 	private String author;
 	private int yop;
 	private int price;
+	
 	public int incvalue(int percentage)
 	{
 		return this.price+=(int)(price*(percentage/100.00));

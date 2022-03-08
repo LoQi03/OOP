@@ -3,11 +3,11 @@ package feladat3;
 public class Person {
 	private String name;
 	private int weight;
-	private int height;
+	private double height;
 	
 	public double TTI()
 	{
-		return (double)(this.weight/(double)(this.height*this.height));
+		return (double)(weight/(height*height));
 	}
 	public String Obesity()
 	{
@@ -15,7 +15,7 @@ public class Person {
 		{
 			return "thin";
 		}
-		else if(this.TTI()>25)
+		else if(this.TTI()>25.0)
 		{
 			return "obese";
 		}
@@ -24,9 +24,10 @@ public class Person {
 			return "normal";
 		}
 	}
+	@Override
 	public String toString()
 	{
-		return "Person:(Name: "+this.name+" Weight: "+this.weight+" Height: "+this.height+" TTI: "+this.Obesity()+")";
+		return "Person:[Name: "+this.name+" Weight: "+this.weight+" Height: "+this.height+"m TTI: "+this.Obesity()+"]";
 	}
 	public String setName(String input)
 	{
@@ -36,7 +37,7 @@ public class Person {
 	{
 		return this.weight=input;
 	}
-	public int setHeight(int input)
+	public double setHeight(double input)
 	{
 		return this.height=input;
 	}
@@ -48,7 +49,7 @@ public class Person {
 	{
 		return this.weight;
 	}
-	public int getHeight()
+	public double getHeight()
 	{
 		return this.height;
 	}
