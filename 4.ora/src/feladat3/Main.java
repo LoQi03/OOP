@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package feladat3;
 
 import java.util.Scanner;
@@ -32,3 +33,19 @@ public class Main {
 	}
 	
 }
+=======
+package feladat3;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Person p = new Person();
+		p.setHeight(180);
+		p.setName("Lukacs Alfonz");
+		p.setWeight(130);
+		System.out.println(p.TTI());
+
+	}
+
+}
+>>>>>>> branch 'master' of https://github.com/LoQi03/OOP
