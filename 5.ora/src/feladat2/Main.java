@@ -6,8 +6,8 @@ public class Main {
 	static Scanner input= new Scanner(System.in);
 	public static void main(String[] args) {
 		SoundDisc[] discs=new SoundDisc[read()];
-		discs=uploadDiscs(discs);
-		System.out.println(discs[maxLengthIndex(discs)].toString());
+		uploadDiscs(discs);
+		System.out.println(discs[maxLengthIndex(discs)]);
 		printDiscs(discs);
 	}
 	public static int read()
@@ -78,7 +78,7 @@ public class Main {
 	{
 		for(SoundDisc item : array)
 		{
-			System.out.println(item.toString());
+			System.out.println(item);
 		}
 	}
 }
