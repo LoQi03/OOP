@@ -1,7 +1,7 @@
 package feladat1;
 
 public class Main {
-
+	//asd
     public static void main(String[] args) {
         Employee[] emps = { new Employee("Levente Fazekas", 100), new Employee("Baksa Erika Varga", 150),
                 new Employee("Charles Heavy", 450), new Employee("Balage Bolyki", 10),
