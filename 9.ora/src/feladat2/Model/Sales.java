@@ -1,4 +1,4 @@
-package feladat2;
+package feladat2.Model;
 
 public interface Sales {
 

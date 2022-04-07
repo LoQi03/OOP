@@ -1,12 +1,15 @@
 package Products;
 
-import feladat2.Sales;
+import feladat2.Model.Sales;
 
 public class Product implements Sales{
-    private String name;
+
+
+	private String name;
     private int netPrice;
     private int vat;
-
+    private String Curency;
+    private int price;
     public int getGrossPrice() {
         double vatAmount = ((double) vat / 100.0) * netPrice;
         return (int) (vatAmount + netPrice);
@@ -26,18 +29,15 @@ public class Product implements Sales{
         }
     }
 
-    public Product(String name, int netPrice, int vat) {
+    public Product(String name, int price, int vat) {
         super();
         this.name = name;
-        this.netPrice = netPrice;
+        this.price = price;
         this.vat = vat;
+        
     }
 
-    @Override
-    public String toString() {
-        return "Product [name=" + name + ", netPrice=" + netPrice + ", vat=" + vat + ", grossPrice=" + getGrossPrice()
-                + "]";
-    }
+
 
     public String getName() {
         return name;
@@ -65,22 +65,29 @@ public class Product implements Sales{
 
 	@Override
 	public String getCurrency() {
-		return this.getCurrency();
+		return Curency;
 	}
 
 	@Override
 	public void setCurrency(String currency) {
-		this.setCurrency(currency);
+		this.Curency=currency;
 	}
 
 	@Override
 	public int getPrice() {
-		return this.getPrice();
+		return this.price;
 	}
 
 	@Override
 	public void setPrice(int price) {
-		this.setPrice(price);
+		this.price=price;
 	}
 
+    @Override
+	public String toString() {
+		return "Product [name=" + name + ", Price=" + price + ", vat=" + vat + ", Curency=" + Curency + ", price="
+				+ price + "]";
+	}
+    
+    
 }

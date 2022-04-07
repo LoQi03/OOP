@@ -1,4 +1,8 @@
-package feladat2;
+package feladat2.Program;
+
+import feladat2.Model.Sales;
+import feladat2.Product.Book;
+import feladat2.Product.Estate;
 
 public class Main {
 	

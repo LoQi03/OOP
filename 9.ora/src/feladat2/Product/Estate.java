@@ -1,5 +1,6 @@
-package feladat2;
+package feladat2.Product;
 
+import feladat2.Model.Sales;
 
 public class Estate implements Sales {
 	
