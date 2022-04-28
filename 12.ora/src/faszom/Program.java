@@ -1,10 +1,12 @@
 package faszom;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Program {
-
+	static Scanner input = new Scanner(System.in);
 	public static void main(String[] args) {
+		int asd = readi();
 		Card[] array = new Card[] {
 				new CreditCard("Kiss Tamás",LocalDate.parse("2020-04-30"),Bank.OTP,150000,100000),
 				new Card("Nagy Levente",LocalDate.parse("2022-05-31"),100000,Bank.ERSTE),
@@ -42,4 +44,22 @@ public class Program {
 			}
 		}
 	}
+	public static int readi()
+	{
+		int out=0;
+		do
+		{
+			System.out.println("Please give me a number between 1 and 10!");
+			try
+			{
+				out=input.nextInt();
+			}
+			catch(Exception e)
+			{
+				System.out.println("Bad format!");
+			}
+		}while(out>10 || out<1);
+		return out;
+	}
+
 }

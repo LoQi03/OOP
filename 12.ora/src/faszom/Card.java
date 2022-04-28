@@ -4,10 +4,9 @@ import java.time.LocalDate;
 
 public class Card implements Chargeable {
 
-
-
-
-
+	public void setCardfee(int cardfee) {
+		this.cardfee = cardfee;
+	}
 	private String name;
 	private LocalDate Validity;
 	private int balance;
@@ -76,7 +75,7 @@ public class Card implements Chargeable {
 	}
 
 	@Override
-	public boolean decreaseFee(int input) {
+	public boolean chargeFee(int input) throws NotEnoughMoneyException {
 		if(this.cardfee>=input)
 		{
 			this.cardfee-=input;
@@ -84,10 +83,11 @@ public class Card implements Chargeable {
 		}
 		else
 		{
-			return false;
+			throw new NotEnoughMoneyException();
 		}
 	}
 	public int getCardfee() {
 		return cardfee;
 	}
+	
 }

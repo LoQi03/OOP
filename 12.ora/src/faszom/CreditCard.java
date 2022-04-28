@@ -18,12 +18,11 @@ public class CreditCard extends Card{
 	{
 		if(this.getMoney(price))
 		{
-			this.setBalance(this.getBalance()-this.getCardfee());
 			return true;
 		}
 		else if(credit>=price && LocalDate.now().isBefore(this.getValidity()))
 		{
-			this.credit-=price-this.getCardfee();
+			this.credit-=price;
 			return true;
 		}
 		else
@@ -42,5 +41,17 @@ public class CreditCard extends Card{
 	public String toString() {
 		return "CreditCard [credit=" + credit + ", getName()=" + getName() + ", getValidity()=" + getValidity()
 				+ ", getBalance()=" + getBalance() + ", getBank()=" + getBank() + "]";
+	}
+	@Override
+	public boolean chargeFee(int input) throws NotEnoughMoneyException {
+		if(this.getBalance()>=input)
+		{
+			this.setBalance(this.getBalance()-input);
+			return true;
+		}
+		else
+		{
+			throw new NotEnoughMoneyException();
+		}
 	}
 }
